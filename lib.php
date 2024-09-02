@@ -1,5 +1,18 @@
 <?php
 
+function std2018apikey($sc_id){
+   $app='DVE';
+   $key='2twxYfOIMyZUrsyofE8zbcDXQFxDLOiC7CXTHBshXf2c';
+    $STD2018APIKEY=array(
+        'X-Office-Request: '.$app,
+        'X-Office-Key: '.$key,
+        'SchoolCode: '.$sc_id,
+        'Content-Type: application/json',
+    );
+    
+    return $STD2018APIKEY;
+}
+
 function callAPI($method, $url,$school_id,$data){
    //header("Content-type: application/json; charset=utf-8");
    $curl = curl_init();
